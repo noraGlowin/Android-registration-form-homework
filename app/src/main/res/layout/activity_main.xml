@@ -6,6 +6,7 @@
     tools:context=".MainActivity">
 
     <EditText
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:id="@+id/name"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
