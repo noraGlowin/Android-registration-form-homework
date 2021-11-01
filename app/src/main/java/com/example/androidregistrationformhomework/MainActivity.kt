@@ -25,17 +25,25 @@ class MainActivity : AppCompatActivity() {
             R.id.male -> "male"
             else -> "you are an angle"
         }
-        val isMatch = if (passWord != rePassWord) {
-        binding.userInfo.setText("Password Missmatch , please re-enter your password")
-        } else {
-            binding.userInfo.setText("Profile \n " +
-                    "Name: $userName \n " +
-                    "Email : $userEmail \n" +
-                    "Birth Date : $birthDay \n " +
-                    "Gender : $gender \n" +
-                    "Password : $passWord \n" +
-                    "Re-Password : $rePassWord ")
+        if (userName.isNotEmpty() && userEmail.isNotEmpty() && passWord.isNotEmpty() && rePassWord.isNotEmpty()){
+            if (passWord == rePassWord) {
+
+                binding.userInfo.setText("Profile \n " +
+                        "Name: $userName \n " +
+                        "Email : $userEmail \n" +
+                        "Birth Date : $birthDay \n " +
+                        "Gender : $gender \n" +
+                        "Password : $passWord \n" +
+                        "Re-Password : $rePassWord ")
+
+            } else {
+                binding.userInfo.setText("Password Missmatch , please re-enter your password")
+            }
+        }else{
+            binding.warning.setText("full the blank please !")
         }
-    }
+
+        }
+
 
 }
