@@ -1,86 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="160dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_Container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="48dp"
-        android:hint="Enter Your Name"
-        android:inputType="text"
-        android:required="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:id="@+id/email"
-        android:required="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:hint="Enter Your Email"
-
-        android:inputType="textEmailAddress"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:inputType="text"
+            android:hint="name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Enter Your Password"
-        android:inputType="textPassword"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@id/name_Container">
 
-    <EditText
-        android:id="@+id/re_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="Re-Enter Your Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"/>
 
-    <EditText
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:id="@+id/birtday"
-        android:layout_width="wrap_content"
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Enter Your birtday"
-        android:inputType="date"
+        android:layout_marginTop="30dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/re_password" />
+        app:layout_constraintTop_toBottomOf="@id/emailContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:maxLength="16"
+            android:inputType="textPassword"
+            android:hint="@string/password"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/repass_Container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repass_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:hint="@string/re_enter_password"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/birthday_Container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/required"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repass_Container"
+        app:startIconDrawable="@drawable/calendar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/birthday_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:inputType="date"
+            android:hint="Enter your Birth Date "/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/gender"
-        android:layout_width="216dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="103dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birtday">
+        app:layout_constraintTop_toBottomOf="@+id/birthday_Container">
 
         <TextView
             android:id="@+id/textView"
@@ -103,39 +161,27 @@
             android:text="Male" />
     </RadioGroup>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/registration"
-        android:layout_width="157dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="12dp"
-        android:text="Registration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gender" />
-
-    <TextView
-        android:id="@+id/user_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text=""
+        android:layout_marginTop="8dp"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registration" />
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
 
     <TextView
-        android:id="@+id/warning"
+        android:id="@+id/userInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
         android:text=""
-        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registration" />
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toEndOf="@+id/gender"
+        app:layout_constraintTop_toBottomOf="@+id/birthday_Container"
+        app:layout_constraintVertical_bias="0.414" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    android:onClick="onCheckboxClicked"-->
